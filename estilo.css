@@ -1,0 +1,91 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #ccc;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline; margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav a:hover {
+    color: #000000;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contenido {
+    padding-left: 180px;
+    display: flex; /* Usa flexbox para alinear imagen y cuadro de texto */
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    gap: 40px; /* Espacio entre la imagen y el cuadro de texto */
+}
+
+.imagen {
+    width: 200px; /* Ajusta el ancho de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.cuadro {
+    background-color: #fff; /* Fondo blanco del cuadro */
+    padding: 20px; /* Espacio interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    width: 80%; /* Ancho del cuadro */
+    max-width: 600px; /* Ancho máximo del cuadro */
+    text-align: left; /* Alinea el texto dentro del cuadro a la izquierda */
+}
+
+#contacto {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.phone {
+    color: #4CAF50;
+}
+
+.email {
+    color: #2196F3;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: #333;
+    text-align: center; /* Centra el texto del footer */
+    padding: 10px;
+}

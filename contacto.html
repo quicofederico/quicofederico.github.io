@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Incluye Font Awesome -->
+    <script>
+        // Función para validar el formulario
+        function validarFormulario(event) {
+            // Evitar que se envíe el formulario si hay errores
+            event.preventDefault();
+
+            // Obtener los valores de los campos del formulario
+            var nombre = document.getElementById("nombre").value;
+            var email = document.getElementById("email").value;
+            var telefono = document.getElementById("telefono").value;
+            var pais = document.getElementById("pais").value;
+            var comentarios = document.getElementById("comentarios").value;
+            var formValido = true;
+
+            // Validar Nombre
+            if (nombre === "") {
+                alert("Por favor, ingresa tu nombre.");
+                formValido = false;
+            }
+
+            // Validar Correo
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailRegex.test(email)) {
+                alert("Por favor, ingresa un correo electrónico válido.");
+                formValido = false;
+            }
+
+            // Validar Teléfono (al menos 10 dígitos)
+            var telefonoRegex = /^\+?\d{1,3}[-\s]?\(?\d{1,4}\)?[-\s]?\d{1,4}[-\s]?\d{1,4}$/;
+            if (!telefonoRegex.test(telefono)) {
+                alert("Por favor, ingresa un número de teléfono válido.");
+                formValido = false;
+            }
+
+            // Validar Comentarios
+            if (comentarios === "") {
+                alert("Por favor, ingresa un comentario.");
+                formValido = false;
+            }
+
+            // Si el formulario es válido, mostrar un mensaje de éxito (simulado)
+            if (formValido) {
+                alert("Formulario enviado correctamente.");
+                // Puedes agregar aquí una acción para enviar los datos, como una llamada AJAX o redirigir a otra página
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">INICIO</a></li>
+                <li><a href="proyectos.html">PROYECTOS</a></li>
+                <li><a href="habilidades.html">HABILIDADES</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <br><br>
+        
+        <div class="contact-info">
+            <span class="icon phone">
+              <i class="fas fa-phone-alt"></i>
+            </span>
+            <p>22-27-47-26-30</p>
+        </div>
+        <div class="contact-info">
+            <span class="icon email">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <p><a href="mailto:viclara7u@gmail.com">viclara7u@gmail.com</a></p>
+        </div>
+
+        <form id="formularioContacto" onsubmit="validarFormulario(event)">
+            <div class="contact-info">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre">
+            </div>
+
+            <div class="contact-info">
+                <label for="email">Correo:</label>
+                <input type="email" name="email" id="email" placeholder="ejemplo@gmail.com">
+            </div>
+
+            <div class="contact-info">
+                <label for="telefono">Número de teléfono:</label>
+                <input type="tel" name="telefono" id="telefono" placeholder="+52 123 456 789">
+            </div>
+
+            <div class="contact-info">
+                <label for="pais">País:</label>
+                <select name="pais" id="pais">
+                    <option value="espana">España</option>
+                    <option value="mexico">México</option>
+                    <option value="alemania">Alemania</option>
+                </select>
+            </div>
+
+            <div class="contact-info">
+                <label for="comentarios">Comentarios adicionales:</label>
+                <textarea name="comentarios" id="comentarios" rows="4" cols="50" placeholder="Deja un comentario"></textarea>
+            </div>
+
+            <div class="contact-info">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p><center>&copy; 2024 Victor Hugo Lara Muñoz. Todos los derechos reservados.</center></p>
+    </footer>
+</body>
+</html>
